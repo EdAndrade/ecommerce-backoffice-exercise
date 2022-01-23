@@ -1,0 +1,22 @@
+{
+    "users": [
+
+    ],
+
+    "admins": [
+        {
+            "name": "Edmilson Andrade",
+            "role": "master",
+            "phoneNumber": "926183512",
+            "password": "123"
+        }
+    ],
+
+    "products": [
+
+    ],
+
+    "orders": [
+        
+    ]
+}
