@@ -1,0 +1,7 @@
+.layoutOrientation{
+    display: flex;
+
+    .page{
+        width: calc( 100% - 270px );
+    }
+}
