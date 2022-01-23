@@ -1,4 +1,5 @@
 import style from './style.module.scss';
+import Link from 'next/link';
 
 export function AsideMenu(){
 
@@ -13,7 +14,7 @@ export function AsideMenu(){
                 </div>
 
                 <div className="user">
-                    
+
                     <div className="image">
                         
                     </div>
@@ -24,9 +25,19 @@ export function AsideMenu(){
                 </div>
 
                 <nav>
-                    <p>Admins</p>
-                    <p>Produtos</p>
-                    <p>Usuários</p>
+                    
+                    <Link href='/admins'>
+                        <p>Admins</p>
+                    </Link>
+                    
+                    <Link href='/produtos'>
+                        <p>Produtos</p>
+                    </Link>
+
+                    <Link href='/usuarios'>
+                        <p>Usuários</p>
+                    </Link>
+
                 </nav>
 
             </section>

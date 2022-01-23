@@ -1,11 +1,11 @@
 import { AsideMenu } from "../../components/Menus/AsideMenu/AsideMenu";
 
-export default function Admins(){
+export default function Products(){
 
     return (
         <section>
             <AsideMenu/>
-            <p>Admins</p>
+            <p>produtos</p>
         </section>
     );
 }
