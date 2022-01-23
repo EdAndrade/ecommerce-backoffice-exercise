@@ -4,7 +4,6 @@ export default function Products(){
 
     return (
         <section>
-            <AsideMenu/>
             <p>produtos</p>
         </section>
     );
