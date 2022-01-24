@@ -4,6 +4,7 @@ import { NotificationContainer } from 'react-notifications';
 import { useState, useEffect } from 'react';
 import { API } from '../services/api/index';
 import { useRouter } from 'next/router';
+import LoginLayout from '../layouts/loginLayout';
 
 export default function IndexApp() {
 
@@ -66,5 +67,13 @@ export default function IndexApp() {
 				</div>
 			</div>
 		</section>
+	);
+}
+
+IndexApp.getLayout = function getLayout(page){
+	return (
+		<LoginLayout>
+			{page}
+		</LoginLayout>
 	);
 }

@@ -1,14 +1,17 @@
 import globaStyle from '../styles/globalStyle.scss';
-import Layout from '../layouts/default';
 import NotificationContainer from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
+import Layout from '../layouts/default';
 
 function MyApp({ Component, pageProps }) {
-	return (
-		<Layout>
+
+	const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>)
+
+	return getLayout(
+		<section>
 			<Component {...pageProps} />
 			<NotificationContainer />
-		</Layout>
+		</section>
 	);
 }
 
