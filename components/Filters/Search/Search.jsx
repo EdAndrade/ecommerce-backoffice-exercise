@@ -1,4 +1,6 @@
 import style from './style.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export const SearchFilter = function(){
 
@@ -6,7 +8,10 @@ export const SearchFilter = function(){
         <section className={style.searchFilter}>
             
             <div className="input-icon-1">
-                <input type="text" />
+                <input type="text" placeholder='Pesquisar'/>
+                <div className="icon">
+                    <FontAwesomeIcon icon={faSearch}/>
+                </div>
             </div>
         </section>
     )
