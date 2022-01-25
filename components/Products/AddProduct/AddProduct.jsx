@@ -13,6 +13,13 @@ export function AddProduct( { changeAddProductVisibility } ){
             
             <div className="addProductContent">
                 
+                <form action="">
+                    <input type="text" placeholder='Nome do produto'/>
+                    <input type="number" placeholder='Quantidade'/>
+                    <input type="text" placeholder='Categoria'/>
+
+                    <button type="submit">Cadastrar produto</button>
+                </form>
             </div>
 
         </section>
