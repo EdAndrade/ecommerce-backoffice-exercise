@@ -1,6 +1,7 @@
 #asideMenu{
     width: 270px;
     height: 100vh;
+    position: fixed;
     background-color: rgb(75, 75, 186);
 
     :global .asideContent{

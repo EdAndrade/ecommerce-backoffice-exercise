@@ -8,21 +8,28 @@ export default function Products(){
 
     const [isAddProductVisible, setAddProductVisibility] = useState(false)
     const [gettingProducts, setGettingProducts] = useState(true);
-    const [products, setProducts] = useState([]);
+    const [productsList, setProducts] = useState([]);
 
     useEffect(() => {
         getProducts();
     },[]);
 
-    function changeAddProductVisibility(){
-        setAddProductVisibility(!isAddProductVisible)
+    function changeAddProductVisibility( { reload } = { reload: false} ){
+        setAddProductVisibility(!isAddProductVisible);
+        
+        if(reload){
+            getProducts();
+        }
     }
 
     function getProducts(){
 
+        setGettingProducts(true);
+
         API.products.getProducts().then( response => {
-            console.log(response)
+            setProducts(response.data);
             setGettingProducts(false);
+            console.log(productsList, response.data);
         })
     }
 
@@ -33,7 +40,7 @@ export default function Products(){
             
             <div className="productsContent">
 
-                <div className="globalAddButton" onClick={changeAddProductVisibility}>
+                <div className="globalAddButton" onClick={() => changeAddProductVisibility()}>
                     <p>+</p>
                 </div>
 
@@ -44,13 +51,22 @@ export default function Products(){
                     <div className="productsList">
 
                         <div className="header">
-                            <p>Nome</p>
-                            <p>Quantidade</p>
-                            <p>Categoria</p>
-                            <p>Data</p>
+                            <p className="name">Nome</p>
+                            <p className="quantity">Quantidade</p>
+                            <p className="category">Categoria</p>
+                            <p className="date">Data</p>
                         </div>
 
                         <div className="products">
+
+                            { productsList.map( product => (
+                                <div key={product.id} className="product">
+                                    <p className="name">{ product.name }</p>
+                                    <p className="quantity">{ product.quantity }</p>
+                                    <p className="category">{ product.category }</p>
+                                    <p className="date">{ product.date }</p>
+                                </div>
+                            ))}
 
                         </div>
                     </div>

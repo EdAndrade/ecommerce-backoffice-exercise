@@ -1,22 +1,54 @@
 {
-    "users": [
-
-    ],
-
-    "admins": [
-        {
-            "name": "Edmilson Andrade",
-            "role": "master",
-            "phoneNumber": "926183512",
-            "password": "123"
-        }
-    ],
-
-    "products": [
-
-    ],
-
-    "orders": [
-        
-    ]
+  "users": [],
+  "admins": [
+    {
+      "name": "Edmilson Andrade",
+      "role": "master",
+      "phoneNumber": "926183512",
+      "password": "123"
+    }
+  ],
+  "products": [
+    {
+      "name": "Salsicha",
+      "quantity": "110",
+      "category": "Charcutaria",
+      "id": 1
+    },
+    {
+      "name": "Pão",
+      "quantity": "5",
+      "category": "Pastelaria",
+      "id": 2
+    },
+    {
+      "name": "Arroz 10KG",
+      "quantity": "190",
+      "category": "Cesta básica",
+      "date": "2022-01-25T14:50:09.724Z",
+      "id": 3
+    },
+    {
+      "name": "Abacate",
+      "quantity": "90",
+      "category": "Fruta",
+      "date": "2022-01-25T14:50:56.088Z",
+      "id": 4
+    },
+    {
+      "name": "Laranja",
+      "quantity": "190",
+      "category": "Fruta",
+      "date": "2022-01-25T14:51:40.128Z",
+      "id": 5
+    },
+    {
+      "name": "Manga",
+      "quantity": "490",
+      "category": "Fruta",
+      "date": "2022-01-25T14:52:35.758Z",
+      "id": 6
+    }
+  ],
+  "orders": []
 }
