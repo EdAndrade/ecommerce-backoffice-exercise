@@ -43,6 +43,22 @@
                 color: #222;
                 border: 3px solid rgb(169, 168, 233);
                 cursor: pointer;
+                position: relative;
+
+                span{
+                    border-radius: 100%;
+                    background-color: rgb(75, 75, 186);
+                    color: #fff;
+                    width: 20px;
+                    height: 20px;
+                    text-align: center;
+                    padding-top: 4px;
+                    font-size: 0.8em;
+                    font-weight: bold;
+                    position: absolute;
+                    top: 7px;
+                    right: 10px;
+                }
             }
         }
     }

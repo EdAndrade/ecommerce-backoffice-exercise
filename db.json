@@ -48,6 +48,20 @@
       "category": "Fruta",
       "date": "2022-01-25T14:52:35.758Z",
       "id": 6
+    },
+    {
+      "name": "",
+      "quantity": 0,
+      "category": "",
+      "date": "2022-01-25T16:57:48.423Z",
+      "id": 7
+    },
+    {
+      "name": "Massa",
+      "quantity": "12",
+      "category": "Cesta básica",
+      "date": "2022-01-27T11:42:52.487Z",
+      "id": 8
     }
   ],
   "orders": []

@@ -1,36 +1,36 @@
 import { SearchFilter } from "../../components/Filters/Search/Search";
 import style from './style.module.scss';
 import { AddProduct } from "../../components/Products/AddProduct/AddProduct";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { API } from "../../services/api";
+import { ProductsContext } from "../../store/productsContext";
 
 export default function Products(){
 
     const [isAddProductVisible, setAddProductVisibility] = useState(false)
     const [gettingProducts, setGettingProducts] = useState(true);
     const [productsList, setProducts] = useState([]);
+    const { products, getProducts } = useContext(ProductsContext);
 
     useEffect(() => {
-        getProducts();
+        performGetProducts();
     },[]);
 
     function changeAddProductVisibility( { reload } = { reload: false} ){
         setAddProductVisibility(!isAddProductVisible);
         
         if(reload){
-            getProducts();
+            performGetProducts();
         }
     }
 
-    function getProducts(){
+    async function performGetProducts(){
 
+        console.log('there')
         setGettingProducts(true);
 
-        API.products.getProducts().then( response => {
-            setProducts(response.data);
-            setGettingProducts(false);
-            console.log(productsList, response.data);
-        })
+        await getProducts();
+        setGettingProducts(false);
     }
 
     return (
@@ -59,7 +59,7 @@ export default function Products(){
 
                         <div className="products">
 
-                            { productsList.map( product => (
+                            { products.map( product => (
                                 <div key={product.id} className="product">
                                     <p className="name">{ product.name }</p>
                                     <p className="quantity">{ product.quantity }</p>

@@ -1,7 +1,13 @@
 import style from './style.module.scss';
 import Link from 'next/link';
+import { StorageManager } from '../../../services/storageManager';
+import { ProductsContext } from '../../../store/productsContext';
+import { useContext, useEffect } from 'react';
 
 export function AsideMenu(){
+
+    const loggedUser = StorageManager.get( { key: 'loggedUser'} )
+    const { products, getProducts } = useContext(ProductsContext);
 
     return(
 
@@ -20,7 +26,7 @@ export function AsideMenu(){
                     </div>
 
                     <div className="userName">
-                        <p>Edmilson Andrade</p>
+                        <p>{ loggedUser && loggedUser.name }</p>
                     </div>
                 </div>
 
@@ -31,7 +37,7 @@ export function AsideMenu(){
                     </Link>
                     
                     <Link href='/produtos'>
-                        <p>Produtos</p>
+                        <p>Produtos <span>{ products.length }</span></p>
                     </Link>
 
                     <Link href='/usuarios'>

@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { API } from '../services/api/index';
 import { useRouter } from 'next/router';
 import LoginLayout from '../layouts/loginLayout';
+import { StorageManager } from '../services/storageManager';
 
 export default function IndexApp() {
 
@@ -24,15 +25,19 @@ export default function IndexApp() {
 			password: userPassword
 
 		}).then( response => {
-			response.data.length > 0 ? handleLogin(true) : handleLogin(false);
+			response.data.length > 0 ? handleLogin({success: true, response}) : handleLogin({success: false});
 			setPerformingLogin(false);
 		})
 	}
 
-	function handleLogin(success){
+	function handleLogin({success, response}){
 
 		if(success){
-			router.push('/admins')
+			router.push('/admins');
+			StorageManager.set({
+				key: 'loggedUser',
+				value: response.data[0]
+			})
 		}else{
 			alert('Usuário não existe')
 		}
