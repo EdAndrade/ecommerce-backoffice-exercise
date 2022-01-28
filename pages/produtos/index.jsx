@@ -26,9 +26,7 @@ export default function Products(){
 
     async function performGetProducts(){
 
-        console.log('there')
         setGettingProducts(true);
-
         await getProducts();
         setGettingProducts(false);
     }

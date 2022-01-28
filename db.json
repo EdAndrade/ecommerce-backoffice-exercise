@@ -62,6 +62,13 @@
       "category": "Cesta básica",
       "date": "2022-01-27T11:42:52.487Z",
       "id": 8
+    },
+    {
+      "name": "Pera",
+      "quantity": "48",
+      "category": "Fruta",
+      "date": "2022-01-27T11:45:32.991Z",
+      "id": 9
     }
   ],
   "orders": []

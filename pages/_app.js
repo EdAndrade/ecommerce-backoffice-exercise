@@ -5,6 +5,9 @@ import Layout from '../layouts/default';
 import { UserProvider } from '../store/UserContext';
 import { StorageManager } from '../services/storageManager';
 import { ProductsProvider } from '../store/productsContext';
+import { Provider } from 'react-redux';
+import { store } from '../feature/store';
+import React from "react";
 
 function MyApp({ Component, pageProps }) {
 
@@ -13,9 +16,11 @@ function MyApp({ Component, pageProps }) {
 	const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>)
 
 	return (
-		<ProductsProvider>
-			{ getLayout(<Component {...pageProps} />) }
-		</ProductsProvider>
+		<Provider store={store}>
+			<ProductsProvider>
+				{ getLayout(<Component {...pageProps} />) }
+			</ProductsProvider>
+		</Provider>
 	);
 }
 
